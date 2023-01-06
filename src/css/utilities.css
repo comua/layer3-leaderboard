@@ -1,0 +1,43 @@
+@tailwind utilities;
+
+@layer utilities {
+  /*
+  ** Scrolling
+  */
+  .hide-scrollbar {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: -ms-autohiding-scrollbar; /* IE10+ */
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Edge */
+  }
+
+  .scrolling-touch {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /*
+  ** Development
+  */
+  .debug {
+    > * {
+      outline: 2px dashed green;
+      > * {
+        outline: 2px dashed tomato;
+        > * {
+          outline: 2px dashed DeepSkyBlue;
+          > * {
+            outline: 2px dashed DeepPink;
+            > * {
+              outline: 2px dashed MediumSlateBlue;
+              * {
+                outline: 2px dashed black;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

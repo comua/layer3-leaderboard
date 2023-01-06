@@ -1,0 +1,106 @@
+@charset "utf-8";
+
+@import './components.css';
+@import './utilities.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /*
+  ** <html> + <body>
+  ** 1. Prevent vertical overflow on document.
+  ** 2. Force scrollbars to always be visible to prevent awkward ‘jumps’ when
+  **    navigating between pages that do/do not have enough content to produce
+  **    scrollbars naturally.
+  ** 3. Ensure the page always fills at least the entire height of the viewport.
+  ** 4. Make sure page is always 100% width even when we lock body scroll with overflow: hidden.
+  ** 5. Prevent adjustments of font size after orientation changes in IE on Windows Phone and in iOS.
+  ** 6. Change the default tap highlight to be completely transparent in iOS.
+  */
+  html {
+    overflow-x: hidden; /* 1 */
+    overflow-y: auto; /* 2 */
+    min-height: 100%; /* 3 */
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply w-full; /* 4 */
+    @apply bg-black text-base text-white antialiased;
+    -webkit-text-size-adjust: 100%; /* 5 */
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* 6 */
+    -webkit-overflow-scrolling: touch;
+    font-kerning: normal;
+  }
+
+  /*
+  ** :root
+  */
+  :root {
+  }
+
+  /*
+  ** Default :focus-visible style
+  */
+  :focus-visible {
+    @apply outline-dashed outline-2;
+  }
+
+  /*
+  ** Responsive typography and sizes
+  **
+  ** This implementation is changing the root font size according to screen size.
+  ** It's then important to use rem or em throughout the app to size everything correctly, in relation
+  ** to viewport and typography sizes.
+  */
+
+  :root {
+    --size-base: 10;
+    --size-artboard: 640;
+  }
+
+  @media screen(tablet) {
+    :root {
+      --size-artboard: 1600;
+    }
+  }
+
+  html {
+    font-size: 10px;
+
+    @media screen(tablet) {
+      /* Viewport sizing calculation */
+      font-size: calc(var(--size-base) * (100vw / var(--size-artboard)));
+    }
+  }
+
+  /*
+  ** Text selection
+  */
+  ::selection {
+    @apply bg-slate-700 text-white;
+    text-shadow: none;
+  }
+
+  /*
+  ** <p>
+  ** 1. Break overflowing words.
+  ** 2. Don't display empty paragraphs.
+  */
+  p {
+    @apply break-words; /* 1 */
+  }
+
+  p:empty {
+    @apply hidden; /* 2 */
+  }
+
+  /*
+  ** SVG elements should fallback to their surrounding text color.
+  */
+  svg {
+    fill: currentColor;
+  }
+}
