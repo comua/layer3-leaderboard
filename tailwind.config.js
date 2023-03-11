@@ -92,6 +92,41 @@ module.exports = {
         inherit: 'inherit',
         black: '#000000',
         white: '#ffffff',
+        l3: {
+          background: {
+            primary: '#100E15',
+            secondary: '#18151E',
+            tertiary: '#201D28',
+          },
+          brand: '#FFFF0D',
+          grey: {
+            1: '#010101',
+            2: '#100E15',
+            3: '#201D28',
+            4: '#302C3C',
+            5: '#413D4F',
+            6: '#524E63',
+            7: '#646176',
+            8: '#77748A',
+            9: '#8B899D',
+            10: '#A09FB1',
+            11: '#B6B5C4',
+            12: '#CDCDD8',
+            13: '#E5E5EB',
+            14: '#FFFFFF',
+          },
+          yellow: '#FFFF0D',
+          darkBlue: '#4672FF',
+          lightBlue: '#00C4FF',
+          pink: '#FF00F3',
+        },
+      },
+      backgroundImage: {
+        orangePink: 'linear-gradient(136.41deg, #ffff0d 0%, #ff00f3 108.55%)',
+        purpleBlack:
+          'linear-gradient(180deg, rgba(250, 82, 160, 0.3) 0%, rgba(250, 82, 160, 0) 100%)',
+        purpleBlue: 'linear-gradient(94.41deg, #ff00f3 -36.26%, #00c4ff 147.8%)',
+        rainbow: 'linear-gradient(90deg, #FFFF0D 8.93%, #FF00F3 51.28%, #00C4FF 100%)',
       },
       transitionTimingFunction: {
         /* Defaults: quint (called "power4" in GSAP) */

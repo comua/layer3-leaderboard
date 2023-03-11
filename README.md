@@ -1,7 +1,7 @@
 <p align="center">
   <a href="">
     <h1 align="center">
-      Next.js Template
+      Layer3 Leaderboard
     </h1>
   </a>
 </p>
@@ -11,7 +11,7 @@
 1.  **Clone repository**
 
     ```shell
-    git clone git@github.com:comua/next-template.git
+    git clone git@github.com:comua/layer3-leaderboard.git
     ```
 
 1.  **Start developing**

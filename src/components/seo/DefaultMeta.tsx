@@ -14,8 +14,8 @@ export const DefaultMeta: FC<IDefaultMetaProps> = ({ canonical }) => {
   const site = {
     themeColor: (tailwindVars.theme.colors as any).light,
     locale: 'en',
-    name: 'Next Template',
-    description: 'Next.js Template',
+    name: 'Layer3 Leaderboard',
+    description: 'Leaderboard for top users',
   }
 
   return (

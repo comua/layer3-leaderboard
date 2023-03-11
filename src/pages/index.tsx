@@ -9,7 +9,7 @@ const Home: FC = () => {
   return (
     <AnimatePresence>
       <main
-        className={`relative flex h-[100svh] w-[100svw] flex-col items-center justify-center bg-black px-24 pt-48 pb-24 text-white`}
+        className={`relative flex h-[100svh] w-[100svw] flex-col items-center justify-center bg-l3-background-primary px-24 pt-48 pb-24 text-white`}
       >
         <NextSeo title={title} description={description} openGraph={{ title, description }} />
         <h1>Hello, World!</h1>
