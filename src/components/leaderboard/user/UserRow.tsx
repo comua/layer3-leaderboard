@@ -8,7 +8,7 @@ import { UserGmStreak } from './UserGmStreak'
 
 export const UserRow = ({ user }) => {
   return (
-    <button className="leaderboard-grid mb-8 w-full cursor-pointer rounded py-16 px-24 transition-[background] duration-100 hover:bg-background-secondary">
+    <button className="leaderboard-grid mb-8 w-full cursor-pointer rounded py-16 px-24 transition-[background] duration-100 hover:bg-background-tertiary">
       <div className="flex justify-start">{user.rank}</div>
       <div className="relative flex justify-center">
         <div className="absolute -bottom-2">

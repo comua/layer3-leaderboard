@@ -17,7 +17,7 @@ export const TopUserCard: FC<ITopUserCard> = ({ user }) => {
   const isRunnerUp = user.rank > 1
 
   return (
-    <button className="flex cursor-pointer flex-col items-center justify-center rounded p-16 transition-[background] duration-100 hover:bg-background-secondary tablet:px-24">
+    <button className="flex cursor-pointer flex-col items-center justify-center rounded p-16 transition-[background] duration-100 hover:bg-background-tertiary tablet:px-24">
       <div className="mb-16">
         {isRunnerUp ? (
           <div
@@ -32,7 +32,7 @@ export const TopUserCard: FC<ITopUserCard> = ({ user }) => {
             {user.rank}
           </div>
         ) : (
-          <CrownIcon size="4.8rem" className="gold-glow animate-bounce fill-amber-300" />
+          <CrownIcon size="4.8rem" className="glow-gold animate-bounce fill-amber-300" />
         )}
       </div>
       <div className="relative mb-24 flex justify-center">

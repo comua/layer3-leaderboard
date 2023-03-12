@@ -14,7 +14,7 @@
     }
   }
 
-  .gold-glow {
+  .glow-gold {
     filter: drop-shadow(rgba(255, 255, 13, 0.32) 0px 4px 14px)
       drop-shadow(rgba(255, 255, 13, 0.12) 0px 0.500862px 1.75302px);
   }

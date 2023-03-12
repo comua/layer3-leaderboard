@@ -27,7 +27,7 @@ export const Top3Users: FC<ITop3UsersProps> = ({ users }) => {
 
   return (
     <AnimatePresence>
-      <motion.div className="flex w-full items-center justify-center gap-16 py-16 tablet:gap-32">
+      <motion.div className="my-16 flex w-full items-center justify-center gap-16 rounded bg-background-secondary py-16 tablet:gap-32">
         {hasAtLeast3Users && (
           <motion.div variants={runnerUpVariants}>
             <TopUserCard user={users[1]} />
