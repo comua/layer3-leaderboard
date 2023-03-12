@@ -2,6 +2,7 @@ import { useRouter } from 'next/router'
 import { FC } from 'react'
 import { twMerge } from 'tailwind-merge'
 
+import { LogoIcon } from '../icons/LogoIcon'
 import { NoScrollLink } from './NoScrollLink'
 
 const NAV_MAP = [{ label: '', path: '/' }]
@@ -17,9 +18,11 @@ export const SiteHeader: FC = () => {
   }
 
   return (
-    <header className="fixed z-50 flex w-full justify-between p-24 text-14 transition-colors duration-1000 ease-in-out-expo">
+    <header className="fixed z-50 flex w-full justify-between border-b-sm border-border bg-background-primary p-16 text-14 tablet:py-24 tablet:px-48">
       <div className="">
-        <NoScrollLink href="/"></NoScrollLink>
+        <NoScrollLink href="/">
+          <LogoIcon />
+        </NoScrollLink>
       </div>
       <div className="">
         <nav>

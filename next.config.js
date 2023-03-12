@@ -11,7 +11,7 @@ const nextConfig = {
     defaultLocale: 'en',
   },
   images: {
-    domains: [],
+    domains: ['gateway.pinata.cloud'],
   },
 }
 

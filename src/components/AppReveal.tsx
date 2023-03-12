@@ -32,7 +32,10 @@ export const AppReveal: FC = () => {
       onExit={onExit}
       unmountOnExit={true}
     >
-      <div ref={nodeRef} className="fixed inset-0 flex items-center justify-center bg-black" />
+      <div
+        ref={nodeRef}
+        className="bg-l3-background-primary fixed inset-0 flex items-center justify-center"
+      />
     </Transition>
   )
 }

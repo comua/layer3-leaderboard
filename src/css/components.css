@@ -4,4 +4,11 @@
   /* Keyframes */
 
   /* Custom components */
+
+  .leaderboard-grid {
+    display: grid;
+    grid-gap: 1em;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 3.5fr repeat(3, 1fr);
+  }
 }

@@ -23,12 +23,11 @@
     overflow-x: hidden; /* 1 */
     overflow-y: auto; /* 2 */
     min-height: 100%; /* 3 */
-    scroll-behavior: smooth;
   }
 
   body {
     @apply w-full; /* 4 */
-    @apply bg-black text-base text-white antialiased;
+    @apply bg-background-primary text-base text-white antialiased;
     -webkit-text-size-adjust: 100%; /* 5 */
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* 6 */
     -webkit-overflow-scrolling: touch;
