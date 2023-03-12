@@ -26,6 +26,7 @@ const Home: FC = () => {
         className={`relative flex w-[100svw] flex-col items-center bg-background-primary px-16 pt-[8rem] pb-24 text-white tablet:px-48 tablet:pt-96`}
       >
         <NextSeo title={title} description={description} openGraph={{ title, description }} />
+        <h1 className="mb-24 text-24">Leaderboard</h1>
         <Leaderboard users={MOCK_USER_DATA.users} />
       </motion.main>
     </AnimatePresence>

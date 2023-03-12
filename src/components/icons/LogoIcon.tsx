@@ -1,9 +1,14 @@
-import React from 'react'
+import React, { FC } from 'react'
 
-export const LogoIcon = ({ size = 24, color = '#fff' }) => {
+interface ILogoIconProps {
+  size?: number
+  className?: string
+}
+
+export const LogoIcon: FC<ILogoIconProps> = ({ size = 24, className }) => {
   const width = (size * 120) / 24
   return (
-    <svg width={width} height={size} viewBox="0 0 178 24" fill={color}>
+    <svg width={width} height={size} viewBox="0 0 178 24" className={className}>
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"

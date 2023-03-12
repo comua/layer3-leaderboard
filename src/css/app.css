@@ -83,6 +83,10 @@
     text-shadow: none;
   }
 
+  h2 {
+    @apply text-16 font-semibold;
+  }
+
   /*
   ** <p>
   ** 1. Break overflowing words.

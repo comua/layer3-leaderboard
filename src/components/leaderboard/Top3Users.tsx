@@ -10,12 +10,12 @@ interface ITop3UsersProps {
 
 const topVariants = {
   hidden: { opacity: 0, y: '-20rem' },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.3 } },
+  visible: { opacity: 1, y: 0, transition: { delay: 0.2, duration: 0.3, type: 'spring' } },
 }
 
 const runnerUpVariants = {
-  hidden: { opacity: 0, y: '-20rem' },
-  visible: { opacity: 1, y: 0, transition: { delay: 0.1, duration: 0.3 } },
+  hidden: { opacity: 0, y: '-10rem' },
+  visible: { opacity: 1, y: 0, transition: { delay: 0.3, duration: 0.3 } },
 }
 
 export const Top3Users: FC<ITop3UsersProps> = ({ users }) => {
@@ -27,7 +27,7 @@ export const Top3Users: FC<ITop3UsersProps> = ({ users }) => {
 
   return (
     <AnimatePresence>
-      <motion.div className="flex w-full items-center justify-center gap-16 tablet:gap-32">
+      <motion.div className="flex w-full items-center justify-center gap-16 py-16 tablet:gap-32">
         {hasAtLeast3Users && (
           <motion.div variants={runnerUpVariants}>
             <TopUserCard user={users[1]} />

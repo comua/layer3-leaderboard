@@ -7,10 +7,15 @@
     display: grid;
     grid-gap: 1em;
     align-items: center;
-    grid-template-columns: 0.5fr 1fr 2fr repeat(2, 1fr);
+    grid-template-columns: 0.25fr 1.5fr 2fr repeat(1, 1fr);
 
     @media screen(mobile) {
-      grid-template-columns: 1fr 1fr 3.5fr repeat(3, 1fr);
+      grid-template-columns: 0.5fr 1.5fr 3.5fr repeat(2, 1fr);
     }
+  }
+
+  .gold-glow {
+    filter: drop-shadow(rgba(255, 255, 13, 0.32) 0px 4px 14px)
+      drop-shadow(rgba(255, 255, 13, 0.12) 0px 0.500862px 1.75302px);
   }
 }
