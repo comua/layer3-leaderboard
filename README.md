@@ -35,41 +35,41 @@
 
 - react
 
-### Web Framework
+#### Web Framework
 
 - nextjs
 - next-seo
 
-### State Management
+#### State Management
 
 - react-query
 
-### Dev Environment
+#### Dev Environment
 
 - eslint
 - prettier
 - husky
 - lint-staged
 
-### Testing
+#### Testing
 
 - vitest
 - testing library
 
-### Styling
+#### Styling
 
 - tailwindcss
 - postcss
 - autoprefixer
 - tailwind-merge
 
-### Animation
+#### Animation
 
 - framer-motion
 - gsap
 - react-transition-group
 
-### Utilities
+#### Utilities
 
 - react-loading-skeleton
 - usehooks-ts
