@@ -15,7 +15,7 @@ export const TopUserCard: FC<ITopUserCard> = ({ user }) => {
   const isRunnerUp = user.rank > 1
 
   return (
-    <button className="flex cursor-pointer flex-col items-center justify-center rounded p-16 font-bold transition-all duration-100 hover:bg-background-secondary">
+    <button className="flex cursor-pointer flex-col items-center justify-center rounded p-16 font-bold transition-[background] duration-100 hover:bg-background-secondary">
       <div
         className={`mb-16 flex aspect-square w-32 items-center justify-center rounded-full font-bold
         ${user.rank === 1 && 'border border-amber-300 bg-amber-500'}

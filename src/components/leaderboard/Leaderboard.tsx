@@ -43,7 +43,7 @@ export const Leaderboard: FC<ILeaderboardProps> = ({ users }) => {
           {remainingUsers.map((user) => {
             return (
               <motion.div variants={userVariants} key={user.address}>
-                <button className="leaderboard-grid mb-8 w-full cursor-pointer rounded py-12 px-24 font-bold transition-all duration-100 hover:bg-background-tertiary tablet:py-16">
+                <button className="leaderboard-grid mb-8 w-full cursor-pointer rounded py-12 px-24 font-bold transition-[background] duration-100 hover:bg-background-tertiary tablet:py-16">
                   <div className="flex justify-start">{user.rank}</div>
                   <div className="relative flex justify-center">
                     <div className="absolute bottom-0 mobile:hidden">
