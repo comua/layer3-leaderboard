@@ -1,14 +1,16 @@
 @tailwind components;
 
 @layer components {
-  /* Keyframes */
-
   /* Custom components */
 
   .leaderboard-grid {
     display: grid;
     grid-gap: 1em;
     align-items: center;
-    grid-template-columns: 1fr 1fr 3.5fr repeat(3, 1fr);
+    grid-template-columns: 0.5fr 1fr 2fr repeat(2, 1fr);
+
+    @media screen(mobile) {
+      grid-template-columns: 1fr 1fr 3.5fr repeat(3, 1fr);
+    }
   }
 }

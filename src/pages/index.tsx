@@ -23,7 +23,7 @@ const Home: FC = () => {
         variants={pageVariants}
         initial="hidden"
         animate="visible"
-        className={`relative flex w-[100svw] flex-col items-center bg-background-primary px-16 pt-64 pb-24 text-white tablet:px-48 tablet:pt-96`}
+        className={`relative flex w-[100svw] flex-col items-center bg-background-primary px-16 pt-[8rem] pb-24 text-white tablet:px-48 tablet:pt-96`}
       >
         <NextSeo title={title} description={description} openGraph={{ title, description }} />
         <Leaderboard users={MOCK_USER_DATA.users} />

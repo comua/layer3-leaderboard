@@ -1,9 +1,12 @@
 import { AnimatePresence, motion } from 'framer-motion'
-import Image from 'next/image'
 import { FC } from 'react'
 
 import { User } from '../../lib/types'
-import { BadgeIcon } from '../icons/BadgeIcon'
+import { LevelBadge } from '../user/LevelBadge'
+import { UserAddress } from '../user/UserAddress'
+import { UserAvatar } from '../user/UserAvatar'
+import { UserExperience } from '../user/UserExperience'
+import { Top3Users } from './Top3Users'
 
 interface ILeaderboardProps {
   users: User[]
@@ -16,58 +19,54 @@ const leaderboardVariants = {
     transition: { duration: 0.3, delayChildren: 0.3, staggerChildren: 0.1 },
   },
 }
-const userVariants = { hidden: { opacity: 0, y: '10rem' }, visible: { opacity: 1, y: 0 } }
+const userVariants = { hidden: { opacity: 0, y: '20rem' }, visible: { opacity: 1, y: 0 } }
 
 export const Leaderboard: FC<ILeaderboardProps> = ({ users }) => {
+  const hasAtLeast3Users = users?.length >= 3
+  const remainingUsers = hasAtLeast3Users ? users.slice(3) : users
+
   return (
     <AnimatePresence>
       <motion.div variants={leaderboardVariants}>
-        <div className="mb-48 flex justify-center">
-          <div className="flex gap-16">
+        <div className="flex justify-center">
+          <div className="mb-24 flex gap-16">
             <div>All Time</div>
             <div>This Month</div>
             <div>This Week</div>
             <div>Today</div>
           </div>
         </div>
+        <div className="mb-48">
+          <Top3Users users={users} />
+        </div>
         <div>
-          {users.map((user) => {
+          {remainingUsers.map((user) => {
             return (
               <motion.div variants={userVariants} key={user.address}>
-                <button className="leaderboard-grid mb-8 w-full cursor-pointer rounded py-12 px-24 font-bold hover:bg-background-tertiary tablet:py-16">
+                <button className="leaderboard-grid mb-8 w-full cursor-pointer rounded py-12 px-24 font-bold transition-all duration-100 hover:bg-background-tertiary tablet:py-16">
                   <div className="flex justify-start">{user.rank}</div>
-                  <Image
-                    src={`https://gateway.pinata.cloud/ipfs/${user.avatarCid}`}
-                    alt="avatar"
-                    width={100}
-                    height={100}
-                    className="aspect-square w-48 rounded-sm tablet:w-64"
-                  />
-                  <div className="flex justify-start font-bold">
-                    <span>{user.username.replace('.eth', '')}</span>
-                    <span className="text-grey-7">.eth</span>
-                  </div>
-                  <div className="relative flex items-center justify-center">
-                    <BadgeIcon
-                      size="6.4rem"
-                      className="absolute fill-transparent stroke-lightBlue stroke-[0.4rem]"
+                  <div className="relative flex justify-center">
+                    <div className="absolute bottom-0 mobile:hidden">
+                      <LevelBadge level={user.level} size="2.4rem" showLabel={false} />
+                    </div>
+                    <UserAvatar
+                      avatarCid={user.avatarCid}
+                      className="aspect-square w-48 rounded-sm tablet:w-64"
                     />
-                    <BadgeIcon size="4.8rem" className="absolute fill-lightBlue" />
-                    <div className="absolute flex flex-col items-center justify-center text-12 font-bold leading-tight">
-                      <div className="text-8 uppercase">Level</div>
-                      <div>{user.level}</div>
-                    </div>
+                  </div>
+                  <UserAddress username={user.username} address={user.address} />
+                  <div className="hidden mobile:block">
+                    <LevelBadge level={user.level} />
                   </div>
                   <div className="flex justify-end">
                     <div>
-                      {user.gmStreak} <span className="font-bold text-grey-7">GM Streak</span>
+                      {user.gmStreak}{' '}
+                      <span className="font-bold text-grey-7">
+                        GM<span className="hidden tablet:inline"> Streak</span>
+                      </span>
                     </div>
                   </div>
-                  <div className="flex justify-end">
-                    <div>
-                      {user.xp} <span className="font-bold text-grey-7">XP</span>
-                    </div>
-                  </div>
+                  <UserExperience xp={user.xp} />
                 </button>
               </motion.div>
             )

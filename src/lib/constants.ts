@@ -92,3 +92,7 @@ export const MOCK_USER_DATA = {
     },
   ],
 }
+
+export const COMPACT_NUMBER_FORMATTER = Intl.NumberFormat('en-US', {
+  notation: 'compact',
+})
