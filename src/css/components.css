@@ -3,19 +3,50 @@
 @layer components {
   /* Custom components */
 
-  .leaderboard-grid {
+  .grid-leaderboard {
     display: grid;
-    grid-gap: 1em;
     align-items: center;
-    grid-template-columns: 0.25fr 1.5fr 2fr repeat(1, 1fr);
+    grid-template-columns: 0.25fr 1fr 2fr repeat(1, 1fr);
 
     @media screen(mobile) {
-      grid-template-columns: 0.5fr 1.5fr 3.5fr repeat(2, 1fr);
+      grid-template-columns: 0.5fr 1fr 0.5fr 3.5fr repeat(2, 1fr);
     }
   }
 
   .glow-gold {
     filter: drop-shadow(rgba(255, 255, 13, 0.32) 0px 4px 14px)
       drop-shadow(rgba(255, 255, 13, 0.12) 0px 0.500862px 1.75302px);
+  }
+
+  .corner-tri-tr {
+    &:before {
+      @apply absolute right-0 top-0 block h-16 w-16 text-16 transition-colors duration-100;
+      border-left: 1em solid transparent;
+      border-top: 1em solid theme(colors.background.primary);
+      content: '';
+    }
+
+    &:hover {
+      &:before {
+        @apply border-t-brand;
+      }
+    }
+  }
+
+  .group:hover .group-hover\:corner-brand {
+    &:before {
+      @apply border-t-brand;
+    }
+
+    @apply bg-background-secondary transition-colors duration-100;
+  }
+
+  .corner-tri-bl {
+    &:after {
+      @apply absolute left-0 bottom-0 block h-16 w-16 text-16;
+      border-right: 1em solid transparent;
+      border-bottom: 1em solid theme(colors.background.primary);
+      content: '';
+    }
   }
 }

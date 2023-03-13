@@ -1,3 +1,4 @@
+import clsx from 'clsx'
 import Image from 'next/image'
 import React, { FC } from 'react'
 
@@ -13,7 +14,7 @@ export const UserAvatar: FC<IUserAvatarProps> = ({ avatarCid, className }) => {
       alt="avatar"
       width={100}
       height={100}
-      className={className}
+      className={clsx('rounded', className)}
     />
   )
 }
