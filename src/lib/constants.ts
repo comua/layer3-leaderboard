@@ -92,3 +92,13 @@ export const MOCK_USER_DATA = {
     },
   ],
 }
+
+export const MOCK_CURRENT_USER = {
+  rank: 82679,
+  address: '0xF222f955Ecced246f3181d14fB4629469cEB7681',
+  avatarCid: '',
+  username: '',
+  gmStreak: 100,
+  xp: 69164,
+  level: 15,
+}

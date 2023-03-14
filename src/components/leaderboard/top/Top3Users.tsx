@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import React, { FC } from 'react'
 
-import { User } from '../../lib/types'
+import { User } from '../../../lib/types'
 import { TopUserCard } from './TopUserCard'
 
 interface ITop3UsersProps {
@@ -14,7 +14,7 @@ const topVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.5,
+      delay: 0.6,
       duration: 0.5,
       type: 'spring',
       damping: 10,
@@ -50,7 +50,7 @@ export const Top3Users: FC<ITop3UsersProps> = ({ users }) => {
   const hasAtLeast3Users = users.length >= 3
 
   return (
-    <div className="my-16 flex w-full items-center justify-between px-16 mobile:justify-center mobile:gap-96 tablet:px-0 tablet:pt-16">
+    <div className="mt-16 flex w-full items-center justify-between mobile:justify-center mobile:gap-96 tablet:px-0">
       {hasAtLeast3Users && (
         <motion.div variants={runnerUpVariants}>
           <TopUserCard user={users[1]} />
