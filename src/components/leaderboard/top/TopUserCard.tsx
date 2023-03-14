@@ -1,6 +1,6 @@
+import clsx from 'clsx'
 import React, { FC } from 'react'
 
-import { clsxm } from '../../../lib/clsxm'
 import { User } from '../../../lib/types'
 import { Badge, BadgeSize } from '../../Badge'
 import { UserAddress } from '../user/UserAddress'
@@ -24,11 +24,11 @@ export const TopUserCard: FC<ITopUserCard> = ({ user }) => {
       <div className="mb-8 tablet:mb-16">
         <TopUserRank rank={user.rank} />
       </div>
-      <div className="relative flex flex-col justify-center rounded border border-transparent p-16 transition-[colors] duration-100 group-hover:bg-background-secondary">
+      <div className="relative flex flex-col justify-center rounded p-16 transition-[colors] duration-100 group-hover:bg-background-secondary/50">
         <div className="relative mb-24 flex justify-center">
           <UserAvatar
             avatarCid={user.avatarCid}
-            className={clsxm('aspect-square border', {
+            className={clsx('aspect-square border', {
               'w-48 tablet:w-96': isRunnerUp,
               'w-80 tablet:w-144': !isRunnerUp,
               [userRank1Border]: user.rank === 1,

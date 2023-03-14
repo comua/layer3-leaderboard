@@ -4,6 +4,7 @@ import { FC } from 'react'
 import { User } from '../../lib/types'
 import { Column } from './Column'
 import { RangeSelector } from './controls/RangeSelector'
+import { Title } from './Title'
 import { Top3Users } from './top/Top3Users'
 import { UserRow } from './user/UserRow'
 
@@ -51,18 +52,8 @@ export const Leaderboard: FC<ILeaderboardProps> = ({ users }) => {
       variants={leaderboardVariants}
       className="relative flex w-full flex-col items-center gap-24"
     >
-      <motion.h1
-        variants={{ hidden: {}, visible: { transition: { staggerChildren: 0.2 } } }}
-        className="flex w-full justify-center pt-24 font-semibold leading-none tracking-tighter tablet:pt-24"
-      >
-        <div className="h-48 overflow-hidden font-accent text-48 uppercase tablet:h-96 tablet:text-96">
-          <motion.div
-            variants={{ hidden: { y: '100%' }, visible: { y: 0, transition: { duration: 0.4 } } }}
-          >
-            Leaderboard
-          </motion.div>
-        </div>
-      </motion.h1>
+      <div className="radial absolute top-0 h-full w-full" />
+      <Title />
       <motion.div variants={columnVariants}>
         <RangeSelector />
       </motion.div>
@@ -76,7 +67,7 @@ export const Leaderboard: FC<ILeaderboardProps> = ({ users }) => {
         >
           {COLUMN_HEADERS.map((header) => {
             return (
-              <Column key={header} center className="font-semibold uppercase text-grey-9">
+              <Column key={header} center className="font-semibold uppercase text-white/30">
                 {header}
               </Column>
             )
