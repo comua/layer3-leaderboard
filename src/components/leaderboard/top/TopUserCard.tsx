@@ -15,25 +15,34 @@ interface ITopUserCard {
 export const TopUserCard: FC<ITopUserCard> = ({ user }) => {
   const isRunnerUp = user.rank > 1
 
-  const userRank1Border = 'border-amber-300'
-  const userRank2Border = 'border-slate-300'
-  const userRank3Border = 'border-amber-500'
+  const userRank1Border = 'border-amber-300 group-hover:glow-gold'
+  const userRank2Border = 'border-slate-300 group-hover:glow-silver'
+  const userRank3Border = 'border-amber-500 group-hover:glow-bronze'
 
   return (
-    <button className="group flex cursor-pointer flex-col items-center justify-center transition-transform duration-200 hover:-translate-y-4 tablet:min-w-[19.2rem]">
-      <div className="mb-8 tablet:mb-16">
+    <button className="group flex cursor-pointer flex-col items-center justify-center transition-transform duration-200 hover:-translate-y-8 tablet:min-w-[19.2rem]">
+      <div className="mb-12 tablet:mb-16">
         <TopUserRank rank={user.rank} />
       </div>
-      <div className="relative flex flex-col justify-center rounded p-16 transition-[colors] duration-100 group-hover:bg-background-secondary/50">
-        <div className="relative mb-24 flex justify-center">
+      <div className="relative flex flex-col justify-center rounded p-16 transition-[colors] duration-100">
+        <div className="relative mb-24 flex items-center justify-center">
+          <div
+            className={clsx(
+              'absolute aspect-square rounded-full border transition-[filter] duration-200',
+              {
+                'w-96 tablet:w-144': isRunnerUp,
+                'w-[12.8rem] tablet:w-192': !isRunnerUp,
+                [userRank1Border]: user.rank === 1,
+                [userRank2Border]: user.rank === 2,
+                [userRank3Border]: user.rank === 3,
+              }
+            )}
+          />
           <UserAvatar
             avatarCid={user.avatarCid}
-            className={clsx('aspect-square border', {
+            className={clsx('aspect-square', {
               'w-48 tablet:w-96': isRunnerUp,
               'w-80 tablet:w-144': !isRunnerUp,
-              [userRank1Border]: user.rank === 1,
-              [userRank2Border]: user.rank === 2,
-              [userRank3Border]: user.rank === 3,
             })}
           />
           <div className="absolute bottom-0">
