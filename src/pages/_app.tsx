@@ -7,7 +7,7 @@ import { AppReveal } from '../components/AppReveal'
 import { Layout } from '../components/Layout'
 import { DefaultMeta } from '../components/seo/DefaultMeta'
 import { IsAppReadyProvider } from '../context/isAppReady'
-import { INTER } from '../lib/fonts'
+import { INTER, TUNGSTEN } from '../lib/fonts'
 
 const queryClient = new QueryClient({
   defaultOptions: {},
@@ -17,7 +17,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
   const url = `${process.env.NEXT_PUBLIC_BASE_URL}${router.route}`
 
   return (
-    <div className={`relative flex font-body ${INTER.variable}`}>
+    <div className={`relative flex font-body ${INTER.variable} ${TUNGSTEN.variable}`}>
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
           <IsAppReadyProvider>

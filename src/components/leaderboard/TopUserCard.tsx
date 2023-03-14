@@ -4,10 +4,7 @@ import React, { FC } from 'react'
 import { User } from '../../lib/types'
 import { Badge, BadgeSize } from '../Badge'
 import { CrownIcon } from '../icons/CrownIcon'
-import { UserAddress } from './user/UserAddress'
 import { UserAvatar } from './user/UserAvatar'
-import { UserExperience } from './user/UserExperience'
-import { UserGmStreak } from './user/UserGmStreak'
 
 interface ITopUserCard {
   user: User
@@ -16,8 +13,12 @@ interface ITopUserCard {
 export const TopUserCard: FC<ITopUserCard> = ({ user }) => {
   const isRunnerUp = user.rank > 1
 
+  const userRank1Border = 'border border-amber-300'
+  const userRank2Border = 'border border-slate-300'
+  const userRank3Border = 'border border-amber-500'
+
   return (
-    <button className="flex cursor-pointer flex-col items-center justify-center rounded p-16 transition-[background] duration-100 hover:bg-background-tertiary tablet:px-24">
+    <button className="group flex cursor-pointer flex-col items-center justify-center rounded py-16 transition-transform duration-200 hover:-translate-y-8">
       <div className="mb-16">
         {isRunnerUp ? (
           <div
@@ -38,24 +39,33 @@ export const TopUserCard: FC<ITopUserCard> = ({ user }) => {
       <div className="relative mb-24 flex justify-center">
         <UserAvatar
           avatarCid={user.avatarCid}
-          className={clsx('aspect-square rounded-sm', {
-            'w-48 tablet:w-64': isRunnerUp,
-            'w-64 tablet:w-96': !isRunnerUp,
-            'border border-amber-300': user.rank === 1,
-            'border border-slate-300': user.rank === 2,
-            'border border-amber-500': user.rank === 3,
+          className={clsx('aspect-square', {
+            'w-48 tablet:w-96': isRunnerUp,
+            'w-64 tablet:w-144': !isRunnerUp,
+            [userRank1Border]: user.rank === 1,
+            [userRank2Border]: user.rank === 2,
+            [userRank3Border]: user.rank === 3,
           })}
         />
         <div className="absolute -bottom-4">
-          <Badge label="Level" value={user.level} showLabel={false} size={BadgeSize.medium} />
+          <Badge label="Level" value={user.level} showLabel={false} size={BadgeSize.Medium} />
         </div>
       </div>
-      <div className="mb-16">
-        <UserAddress username={user.username} address={user.address} />
+      <div className="mb-8 transition-colors duration-100 group-hover:text-brand">
+        <h2 className="font-accent text-24 tablet:text-32">
+          <span>{user.username.replace('.eth', '')}</span>
+          <span className="hidden text-grey-9 tablet:inline">.eth</span>
+        </h2>
       </div>
-      <div className="flex flex-col items-end justify-center gap-4">
-        <UserExperience xp={user.xp} long />
-        <UserGmStreak gmStreak={user.gmStreak} />
+      <div className="corner-tri-bl corner-tri-tr group-hover:corner-brand relative flex w-full flex-col justify-center gap-4 bg-background-tertiary p-16 tablet:px-32">
+        <div>
+          <div className="font-semibold leading-none tablet:text-24">{user.xp}</div>
+          <div className="text-8 uppercase text-grey-9 tablet:text-14">Experience</div>
+        </div>
+        <div>
+          <div className="font-semibold leading-none tablet:text-24">{user.gmStreak}</div>
+          <div className="text-8 uppercase text-grey-9 tablet:text-14">GM Streak</div>
+        </div>
       </div>
     </button>
   )

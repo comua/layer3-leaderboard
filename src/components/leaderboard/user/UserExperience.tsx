@@ -13,7 +13,7 @@ export const UserExperience: FC<IUserExperienceProps> = ({ xp, long }) => {
   }).format(xp)
 
   return (
-    <div className="flex items-center justify-end gap-4 whitespace-nowrap">
+    <div className="flex items-center justify-end gap-4">
       {long ? (
         <span>
           <span className="hidden tablet:inline">{xp}</span>

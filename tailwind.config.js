@@ -36,7 +36,7 @@ module.exports = {
     },
     fontFamily: {
       body: ['var(--font-inter)', fontFamily.sans],
-      header: ['var(--font-founders-grotesk)', fontFamily.sans],
+      accent: ['var(--font-tungsten)', fontFamily.sans],
     },
     fontSize: {
       base: '1.4rem',
