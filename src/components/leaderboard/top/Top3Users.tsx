@@ -50,7 +50,7 @@ export const Top3Users: FC<ITop3UsersProps> = ({ users }) => {
   const hasAtLeast3Users = users.length >= 3
 
   return (
-    <div className="mt-16 flex w-full items-center justify-between mobile:justify-center mobile:gap-96 tablet:px-0 tablet:pt-16">
+    <div className="mt-16 flex w-full items-center justify-between mobile:justify-center mobile:gap-96 tablet:px-0">
       {hasAtLeast3Users && (
         <motion.div variants={runnerUpVariants}>
           <TopUserCard user={users[1]} />
