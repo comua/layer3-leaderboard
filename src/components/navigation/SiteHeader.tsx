@@ -1,7 +1,7 @@
+import clsx from 'clsx'
 import { useRouter } from 'next/router'
 import { FC } from 'react'
 
-import { clsxm } from '../../lib/clsxm'
 import { LogoIcon } from '../icons/LogoIcon'
 import { NoScrollLink } from './NoScrollLink'
 
@@ -24,7 +24,7 @@ export const SiteHeader: FC = () => {
               return (
                 <li
                   key={navItem.path}
-                  className={clsxm(
+                  className={clsx(
                     'mr-24 opacity-50 transition-opacity duration-200 last:mr-0 hover:opacity-100 focus:opacity-100',
                     { 'opacity-100': navItem.path === router.asPath }
                   )}

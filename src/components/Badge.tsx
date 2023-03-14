@@ -20,7 +20,7 @@ export enum BadgeSize {
 export const Badge: FC<IBadgeProps> = ({ value, size = BadgeSize.Large, className }) => {
   return (
     <div className="relative flex items-center justify-center font-semibold">
-      <BadgeIcon size={size} className={clsxm('absolute fill-lightBlue', className)} />
+      <BadgeIcon size={size} className={clsx('absolute fill-lightBlue', className)} />
       <div
         className={clsx('absolute flex flex-col items-center justify-center leading-tight', {
           'text-14': size === BadgeSize.Large,
