@@ -42,6 +42,7 @@ specifiers:
   react-dom: 18.2.0
   react-loading-skeleton: ^3.1.1
   react-transition-group: ^4.4.5
+  tailwind-merge: ^1.10.0
   tailwindcss: ^3.2.4
   typescript: 4.9.4
   usehooks-ts: ^2.9.1
@@ -92,6 +93,7 @@ devDependencies:
   postcss: 8.4.20
   prettier: 2.8.1
   prettier-plugin-tailwindcss: 0.2.1_prettier@2.8.1
+  tailwind-merge: 1.10.0
   tailwindcss: 3.2.4_postcss@8.4.20
   typescript: 4.9.4
   vitest: 0.29.2_jsdom@21.1.0
@@ -4170,6 +4172,10 @@ packages:
     dependencies:
       '@pkgr/utils': 2.3.1
       tslib: 2.4.1
+    dev: true
+
+  /tailwind-merge/1.10.0:
+    resolution: {integrity: sha512-WFnDXSS4kFTZwjKg5/oZSGzBRU/l+qcbv5NVTzLUQvJ9yovDAP05h0F2+ZFW0Lw9EcgRoc2AfURUdZvnEFrXKg==}
     dev: true
 
   /tailwindcss/3.2.4_postcss@8.4.20:

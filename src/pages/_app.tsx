@@ -17,7 +17,7 @@ const App = ({ Component, pageProps, router }: AppProps) => {
   const url = `${process.env.NEXT_PUBLIC_BASE_URL}${router.route}`
 
   return (
-    <div className={`relative flex font-body ${INTER.variable} ${TUNGSTEN.variable}`}>
+    <div className={`relative flex h-[100svh] font-body ${INTER.variable} ${TUNGSTEN.variable}`}>
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
           <IsAppReadyProvider>
