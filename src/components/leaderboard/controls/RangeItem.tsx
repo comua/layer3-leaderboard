@@ -1,6 +1,5 @@
+import clsx from 'clsx'
 import React, { FC, PropsWithChildren } from 'react'
-
-import { clsxm } from '../../../lib/clsxm'
 
 interface IRangeItemProps {
   isSelected?: boolean
@@ -9,11 +8,11 @@ interface IRangeItemProps {
 export const RangeItem: FC<PropsWithChildren<IRangeItemProps>> = ({ children, isSelected }) => {
   return (
     <button
-      className={clsxm(
-        'cursor-pointer rounded-full py-8 px-16 transition-[background] duration-100',
+      className={clsx(
+        'cursor-pointer rounded-full border-sm border-white/5 py-8 px-16 font-semibold transition-[background] duration-100',
         {
-          'bg-white text-black': isSelected,
-          'hover:bg-background-tertiary': !isSelected,
+          'bg-white/20': isSelected,
+          'bg-white/5 hover:bg-white/10': !isSelected,
         }
       )}
     >

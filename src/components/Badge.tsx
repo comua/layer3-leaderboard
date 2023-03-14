@@ -1,6 +1,6 @@
+import clsx from 'clsx'
 import React, { FC } from 'react'
 
-import { clsxm } from '../lib/clsxm'
 import { BadgeIcon } from './icons/BadgeIcon'
 
 interface IBadgeProps {
@@ -22,7 +22,7 @@ export const Badge: FC<IBadgeProps> = ({ value, size = BadgeSize.Large, classNam
     <div className="relative flex items-center justify-center font-semibold">
       <BadgeIcon size={size} className={clsxm('absolute fill-lightBlue', className)} />
       <div
-        className={clsxm('absolute flex flex-col items-center justify-center leading-tight', {
+        className={clsx('absolute flex flex-col items-center justify-center leading-tight', {
           'text-14': size === BadgeSize.Large,
           'text-12': size === BadgeSize.Medium,
           'text-8': size === BadgeSize.Small,

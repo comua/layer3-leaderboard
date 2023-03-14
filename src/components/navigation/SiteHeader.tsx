@@ -11,7 +11,7 @@ export const SiteHeader: FC = () => {
   const router = useRouter()
 
   return (
-    <header className="fixed z-50 flex w-full justify-between border-b-sm border-border bg-background-primary p-16 text-14 tablet:py-24 tablet:px-48">
+    <header className="fixed z-50 flex w-full justify-between border-b-sm border-border p-16 text-14 backdrop-blur tablet:py-24 tablet:px-48">
       <div className="">
         <NoScrollLink href="/">
           <LogoIcon />

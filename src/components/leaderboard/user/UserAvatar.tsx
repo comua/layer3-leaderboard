@@ -1,8 +1,8 @@
+import clsx from 'clsx'
 import Image, { StaticImageData } from 'next/image'
 import React, { FC, useState } from 'react'
 
 import fallbackAvatar from '../../../../public/assets/fallback-avatar.png'
-import { clsxm } from '../../../lib/clsxm'
 
 interface IUserAvatarProps {
   avatarCid: string
@@ -29,7 +29,7 @@ export const UserAvatar: FC<IUserAvatarProps> = ({ avatarCid, className }) => {
       alt="avatar"
       width={100}
       height={100}
-      className={clsxm('rounded-full', className)}
+      className={clsx('rounded-full', className)}
     />
   )
 }

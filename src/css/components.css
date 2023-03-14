@@ -1,6 +1,19 @@
 @tailwind components;
 
 @layer components {
+  /* Keyframes */
+  @keyframes background-pulse {
+    from {
+      transform: scale(0.75);
+    }
+    50% {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(0.75);
+    }
+  }
+
   /* Custom components */
 
   .grid-leaderboard {
@@ -34,21 +47,12 @@
     filter: drop-shadow(theme(colors.amber.700) 0px 0.4rem 1rem);
   }
 
-  .corner-tri-br {
-    &:after {
-      @apply absolute right-0 bottom-0 block h-24 w-24 text-24;
-      border-left: 1em solid transparent;
-      border-bottom: 1em solid theme(colors.background.primary);
-      content: '';
-    }
-  }
-
-  .corner-tri-tr {
-    &:after {
-      @apply absolute right-0 top-0 block h-24 w-24 text-24;
-      border-left: 1em solid transparent;
-      border-top: 1em solid theme(colors.background.primary);
-      content: '';
-    }
+  .radial {
+    background: radial-gradient(
+      ellipse 50% 50% at center,
+      rgba(194, 97, 254, 0.1),
+      rgba(255, 255, 255, 0)
+    );
+    animation: background-pulse 120s ease-in-out infinite;
   }
 }

@@ -1,6 +1,6 @@
+import clsx from 'clsx'
 import React from 'react'
 
-import { clsxm } from '../../../lib/clsxm'
 import { CrownIcon } from '../../icons/CrownIcon'
 
 export const TopUserRank = ({ rank }) => {
@@ -8,7 +8,7 @@ export const TopUserRank = ({ rank }) => {
     <div>
       {rank > 1 ? (
         <div
-          className={clsxm(
+          className={clsx(
             'mt-8 flex aspect-square w-24 items-center justify-center rounded-full font-accent text-12 font-semibold',
             {
               'glow-silver bg-slate-300 text-slate-600': rank === 2,

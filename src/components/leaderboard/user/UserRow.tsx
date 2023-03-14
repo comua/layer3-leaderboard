@@ -1,6 +1,6 @@
+import clsx from 'clsx'
 import React, { FC } from 'react'
 
-import { clsxm } from '../../../lib/clsxm'
 import { User } from '../../../lib/types'
 import { Badge, BadgeSize } from '../../Badge'
 import { GmStreakIcon } from '../../icons/GmStreakIcon'
@@ -17,8 +17,8 @@ interface IUserRowProps {
 export const UserRow: FC<IUserRowProps> = ({ user, isCurrentUser }) => {
   return (
     <button
-      className={clsxm(
-        'grid-leaderboard group relative mb-4 w-full cursor-pointer rounded-xs bg-background-tertiary px-24 transition-[background,transform] duration-200 hover:translate-x-2 hover:-translate-y-2 hover:bg-background-secondary',
+      className={clsx(
+        'grid-leaderboard group relative mb-4 w-full cursor-pointer rounded border-sm border-white/5 bg-background-secondary/50 px-24 backdrop-blur transition-[background,transform] duration-200 hover:translate-x-2 hover:-translate-y-2 hover:bg-background-tertiary/50',
         { '': isCurrentUser }
       )}
     >
