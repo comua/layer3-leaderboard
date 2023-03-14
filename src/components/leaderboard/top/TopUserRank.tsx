@@ -1,9 +1,13 @@
 import clsx from 'clsx'
-import React from 'react'
+import React, { FC } from 'react'
 
 import { CrownIcon } from '../../icons/CrownIcon'
 
-export const TopUserRank = ({ rank }) => {
+interface ITopUserRankProps {
+  rank: number
+}
+
+export const TopUserRank: FC<ITopUserRankProps> = ({ rank }) => {
   return (
     <div>
       {rank > 1 ? (
