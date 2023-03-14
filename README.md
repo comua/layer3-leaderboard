@@ -13,6 +13,12 @@
     ```shell
     git clone git@github.com:comua/layer3-leaderboard.git
     ```
+    
+1. **Set up .env with localhost URL**
+    
+    ```shell
+    NEXT_PUBLIC_BASE_URL=http://localhost:3000
+    ```
 
 1.  **Start developing**
 
