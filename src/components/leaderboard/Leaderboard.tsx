@@ -4,7 +4,6 @@ import { FC } from 'react'
 import { User } from '../../lib/types'
 import { Column } from './Column'
 import { RangeSelector } from './controls/RangeSelector'
-import { Title } from './Title'
 import { Top3Users } from './top/Top3Users'
 import { UserRow } from './user/UserRow'
 
@@ -12,17 +11,14 @@ interface ILeaderboardProps {
   users: User[]
 }
 
-const leaderboardVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { duration: 0.3, delayChildren: 0.3, staggerChildren: 0.15 },
-  },
-}
-
 const columnVariants = {
   hidden: { opacity: 0 },
-  visible: { opacity: 1, transition: { duration: 0.3 } },
+  visible: { opacity: 1, transition: { duration: 0.2 } },
+}
+
+const userListVariants = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
 }
 
 const userVariants = {
@@ -31,7 +27,6 @@ const userVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.3,
       type: 'spring',
       damping: 10,
       stiffness: 100,
@@ -48,19 +43,14 @@ export const Leaderboard: FC<ILeaderboardProps> = ({ users }) => {
   const remainingUsers = hasAtLeast3Users ? users.slice(3) : users
 
   return (
-    <motion.div
-      variants={leaderboardVariants}
-      className="relative flex w-full flex-col items-center gap-24"
-    >
-      <div className="radial absolute top-0 h-full w-full" />
-      <Title />
+    <div className="relative flex w-full flex-col items-center gap-16 py-16 tablet:gap-24 tablet:py-24">
       <motion.div variants={columnVariants}>
         <RangeSelector />
       </motion.div>
       <div className="w-full px-16">
         <Top3Users users={users} />
       </div>
-      <div className="w-full px-16 pb-24 tablet:w-2/3">
+      <div className="w-full px-16 tablet:w-2/3">
         <motion.div
           variants={columnVariants}
           className="grid-leaderboard mt-12 hidden px-24 pb-16 tablet:grid"
@@ -73,14 +63,16 @@ export const Leaderboard: FC<ILeaderboardProps> = ({ users }) => {
             )
           })}
         </motion.div>
-        {remainingUsers?.map((user) => {
-          return (
-            <motion.div variants={userVariants} key={user.address}>
-              <UserRow user={user} />
-            </motion.div>
-          )
-        })}
+        <motion.div variants={userListVariants}>
+          {remainingUsers?.map((user) => {
+            return (
+              <motion.div variants={userVariants} key={user.address}>
+                <UserRow user={user} />
+              </motion.div>
+            )
+          })}
+        </motion.div>
       </div>
-    </motion.div>
+    </div>
   )
 }

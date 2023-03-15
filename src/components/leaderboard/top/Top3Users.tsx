@@ -14,7 +14,7 @@ const topVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.6,
+      delay: 0.5,
       duration: 0.5,
       type: 'spring',
       damping: 10,
@@ -31,7 +31,7 @@ const runnerUpVariants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.9,
+      delay: 0.8,
       duration: 0.5,
       type: 'spring',
       damping: 10,

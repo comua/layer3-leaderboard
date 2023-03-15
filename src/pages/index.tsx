@@ -3,12 +3,13 @@ import { AnimatePresence, motion } from 'framer-motion'
 import { NextSeo } from 'next-seo'
 import { FC } from 'react'
 
+import { Title } from '../components/core/Title'
 import { Leaderboard } from '../components/leaderboard/Leaderboard'
 import { getUsers, useUsers } from '../data/useUsers'
 
 const pageVariants = {
   hidden: {},
-  visible: { transition: { staggerChildren: 0.5 } },
+  visible: { transition: { staggerChildren: 0.2 } },
 }
 
 const Home: FC = () => {
@@ -26,6 +27,8 @@ const Home: FC = () => {
         className="relative flex w-[100svw] flex-col items-center bg-background-primary pt-48 text-white tablet:pt-80"
       >
         <NextSeo title={title} description={description} openGraph={{ title, description }} />
+        <div className="radial absolute top-0 h-full w-full" />
+        <Title>Leaderboard</Title>
         {!isLoading && <Leaderboard users={data?.users} />}
       </motion.main>
     </AnimatePresence>

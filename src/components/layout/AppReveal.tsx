@@ -2,7 +2,7 @@ import { gsap } from 'gsap'
 import { FC, useCallback, useEffect, useRef } from 'react'
 import { Transition } from 'react-transition-group'
 
-import { useIsAppReadyContext } from '../context/isAppReady'
+import { useIsAppReadyContext } from '../../context/isAppReady'
 
 export const AppReveal: FC = () => {
   const nodeRef = useRef(null)

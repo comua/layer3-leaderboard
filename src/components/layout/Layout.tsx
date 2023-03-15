@@ -1,6 +1,6 @@
 import { FC, PropsWithChildren } from 'react'
 
-import { SiteHeader } from './navigation/SiteHeader'
+import { SiteHeader } from '../navigation/SiteHeader'
 
 export const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (

@@ -1,7 +1,7 @@
 import clsx from 'clsx'
 import React, { FC } from 'react'
 
-import { BadgeIcon } from './icons/BadgeIcon'
+import { BadgeIcon } from '../icons/BadgeIcon'
 
 interface IBadgeProps {
   label?: string

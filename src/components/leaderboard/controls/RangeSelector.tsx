@@ -1,15 +1,15 @@
 import React, { FC } from 'react'
 
-import { RangeItem } from './RangeItem'
+import { Button } from '../../core/Button'
 
 export const RangeSelector: FC = () => {
   return (
     <div className="flex justify-center">
       <div className="flex items-center gap-4 rounded-full bg-background-secondary p-4 text-12">
-        <RangeItem isSelected>All Time</RangeItem>
-        <RangeItem>This Month</RangeItem>
-        <RangeItem>This Week</RangeItem>
-        <RangeItem>Today</RangeItem>
+        <Button isSelected>All Time</Button>
+        <Button>This Month</Button>
+        <Button>This Week</Button>
+        <Button>Today</Button>
       </div>
     </div>
   )

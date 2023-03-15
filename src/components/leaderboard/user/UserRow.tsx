@@ -2,7 +2,7 @@ import clsx from 'clsx'
 import React, { FC } from 'react'
 
 import { User } from '../../../lib/types'
-import { Badge, BadgeSize } from '../../Badge'
+import { Badge, BadgeSize } from '../../core/Badge'
 import { GmStreakIcon } from '../../icons/GmStreakIcon'
 import { Column } from '../Column'
 import { UserAddress } from './UserAddress'
